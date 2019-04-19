@@ -1,15 +1,19 @@
 from colorama import Fore, Back, Style
 import colorama
+import os
 colorama.init()
 start = input("Do you want to start Austin's Tool's? Y/n> ")
 startboolanimateint = 0
 startbool = False
 if start == "y" or "Y" or "Yes" or "yes" or "ya" or "YA" or "Ya" or "yeah" or "Yeah" or "YEAH" or "YES" or "oh yeah yeah" or "OH YEAH YEAH":
+    if os.name == "nt":
+        clear = "cls"
+    else:
+        clear = "clear"
     startbool = True
     def WholeThing2():
         import time
         import random
-        import os
         import pip
         import re
         redc = Fore.RED
@@ -20,6 +24,7 @@ if start == "y" or "Y" or "Yes" or "yes" or "ya" or "YA" or "Ya" or "yeah" or "Y
         resetc = Fore.RESET
         background = Back.WHITE
         whitec = Fore.WHITE
+        os.system(clear)
         print(
             cyanc+"____________________________________________________________________________________________________________")
         time.sleep(.3)
@@ -62,7 +67,7 @@ if start == "y" or "Y" or "Yes" or "yes" or "ya" or "YA" or "Ya" or "yeah" or "Y
         time.sleep(.1)
         print("5."+redc+"Macros and bots     "+resetc+"15.")
         time.sleep(.3)
-        print("6."+redc+"UNKNOWN             "+resetc+"16.")
+        print("6."+redc+"Random things       "+resetc+"16.")
         time.sleep(.3)
         print("7."+redc+"UNKNOWN             "+resetc+"17.")
         time.sleep(.3)
@@ -72,10 +77,14 @@ if start == "y" or "Y" or "Yes" or "yes" or "ya" or "YA" or "Ya" or "yeah" or "Y
         time.sleep(.3)
         print("10.                   20.")
         print("")
-        print("\033[0m")
+        print("")
+        print("")
+        print("")
+        print("")
         time.sleep(.5)
         Input1 = input("Select a number from the list: ")
         if Input1 == "1":
+            os.system(clear)
             print("")
             print(cyanc+"_________                              ")
             print("__  ____/_____ _______ ________________")
@@ -83,13 +92,6 @@ if start == "y" or "Y" or "Yes" or "yes" or "ya" or "YA" or "Ya" or "yeah" or "Y
             print("/ /_/ / / /_/ /_  / / / / /  __/(__  ) ")
             print("\____/  \__,_/ /_/ /_/ /_/\___//____/  " + whitec)
             print("_______________________________________" + resetc)
-            print("")
-            print("")
-            print("")
-            print("")
-            print("")
-            print("")
-            print("")
             print("")
             print("")
             print("")
@@ -111,11 +113,9 @@ if start == "y" or "Y" or "Yes" or "yes" or "ya" or "YA" or "Ya" or "yeah" or "Y
             print("")
             print("")
             print("")
-            print("")
-            print("")
-            print("")
             Input1_1 = input("Select a number from the list: ")
             if Input1_1 == "1":
+                os.system(clear)
                 limit = 100
                 randomnum = random.randint(1, 100)
                 guessgame = True
@@ -161,8 +161,10 @@ if start == "y" or "Y" or "Yes" or "yes" or "ya" or "YA" or "Ya" or "yeah" or "Y
                     except ValueError:
                         ValueErrorinput = input("Invalid character. Would you like to exit this game?(y/n): ")
                         time.sleep(1)
-                        guessgame = False
-                        guessgame = True
+                        if ValueErrorinput.startswith("Y") or ValueErrorinput.startswith("y"):
+                            guessgame = False
+                        else:
+                            guessgame = True
             elif Input1_1 == "0":
                 startbool = False
                 time.sleep(1)
@@ -172,9 +174,8 @@ if start == "y" or "Y" or "Yes" or "yes" or "ya" or "YA" or "Ya" or "yeah" or "Y
             elif Input1_1 == "2":
                 import time
                 import random
-
-                O = "OOO"
-                X = "XXX"
+                O = Fore.BLUE+"OOO"+Fore.RESET
+                X = Fore.RED+"XXX" + Fore.RESET
                 a = "1  "
                 b = "2  "
                 c = "3  "
@@ -187,6 +188,7 @@ if start == "y" or "Y" or "Yes" or "yes" or "ya" or "YA" or "Ya" or "yeah" or "Y
                 Onum = ""
                 Xnum = ""
                 runTTT = True
+                os.system(clear)
                 print(a + "|" + b + "|" + c)
                 print("___|___|___")
                 print(d + "|" + e + "|" + f)
@@ -196,11 +198,12 @@ if start == "y" or "Y" or "Yes" or "yes" or "ya" or "YA" or "Ya" or "yeah" or "Y
                 print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
                 wonTTT = False
                 while runTTT:
-                    if a and b and c and d and e and f and g and h and i in [O, X] and not wonTTT:
+                    if a in [O, X] and b in [O, X] and c in [O, X] and d in [O, X] and e in [O, X] and f in [O, X] and g in [O, X] and h in [O, X] and i in [O, X] and not wonTTT:
                         print("Board filled! you got a tie.")
                         runTTT = False
                         startbool = False
                         time.sleep(1)
+                        break
                     Xnum = input("Player1(X) choose a number: ")
                     if Xnum == "1" and a != O and a != X:
                         a = X
@@ -220,7 +223,7 @@ if start == "y" or "Y" or "Yes" or "yes" or "ya" or "YA" or "Ya" or "yeah" or "Y
                         h = X
                     elif Xnum == "9" and i != O and i != X:
                         i = X
-                    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+                    os.system(clear)
                     print(a + "|" + b + "|" + c)
                     print("___|___|___")
                     print(d + "|" + e + "|" + f)
@@ -228,23 +231,52 @@ if start == "y" or "Y" or "Yes" or "yes" or "ya" or "YA" or "Ya" or "yeah" or "Y
                     print(g + "|" + h + "|" + i)
                     print("   |   |   ")
                     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-                    if a == X and e == X and i == X:
+                    if a == X and b == X and c == X:
+                        os.system(clear)
+                        a = Back.CYAN + X + Back.RESET
+                        b = Back.CYAN + X + Back.RESET
+                        c = Back.CYAN + X + Back.RESET
+                        print(a + "|" + b + "|" + c)
+                        print("___|___|___")
+                        print(d + "|" + e + "|" + f)
+                        print("___|___|___")
+                        print(g + "|" + h + "|" + i)
+                        print("   |   |   ")
+                        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
                         print("X wins!")
+                        input("Press any key to continue . . . ")
                         wonTTT = True
                         break
-                    elif a == X and b == X and c == X:
+                    elif d == X and e == X and f == X:
+                        os.system(clear)
+                        d = Back.CYAN + X + Back.RESET
+                        e = Back.CYAN + X + Back.RESET
+                        f = Back.CYAN + X + Back.RESET
+                        print(a + "|" + b + "|" + c)
+                        print("___|___|___")
+                        print(d + "|" + e + "|" + f)
+                        print("___|___|___")
+                        print(g + "|" + h + "|" + i)
+                        print("   |   |   ")
+                        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+                        print("X wins!")
+                        input("Press any key to continue . . . ")
+                        wonTTT = True
+                        break
+                    elif g == X and h == X and i == X:
                         print("X wins!")
                         wonTTT = True
                         break
                     elif a == X and d == X and g == X:
-                        print("X wins!")
-                    if a and b and c and d and e and f and g and h and i in [O, X] and not wonTTT:
+                        print("X wins")
+
+                    if a in [O, X] and b in [O, X] and c in [O, X] and d in [O, X] and e in [O, X] and f in [O,X] and g in [O, X] and h in [O, X] and i in [O, X] and not wonTTT:
                         print("Board filled! you got a tie.")
                         runTTT = False
                         startbool = False
                         time.sleep(1)
-
-                    Onum = input("Player2(O)choose a number(1-9): ")
+                        break
+                    Onum = input("Player2(O)choose a number: ")
 
                     if Onum == "1" and a != O and a != X:
                         a = O
@@ -264,6 +296,7 @@ if start == "y" or "Y" or "Yes" or "yes" or "ya" or "YA" or "Ya" or "yeah" or "Y
                         h = O
                     elif Onum == "9" and i != O and i != X:
                         i = O
+                    os.system(clear)
                     print(a + "|" + b + "|" + c)
                     print("___|___|___")
                     print(d + "|" + e + "|" + f)
@@ -275,13 +308,19 @@ if start == "y" or "Y" or "Yes" or "yes" or "ya" or "YA" or "Ya" or "yeah" or "Y
                         print("O wins!")
                         wonTTT = True
                         break
-                    if a and b and c and d and e and f and g and h and i in [O, X] and not wonTTT:
-                        print("Board filled! you got a tie.")
-                        runTTT = False
-                        startbool = False
-                        time.sleep(1)
-
-
+        elif Input1 == "2":
+            mathcolorchoices = [Fore.WHITE, Fore.CYAN, Fore.MAGENTA, Fore.GREEN, Fore.BLUE, Fore.RED]
+            mathcolor1 = random.choice(mathcolorchoices)
+            mathcolor2 = random.choice(mathcolorchoices)
+            mathcolor3 = random.choice(mathcolorchoices)
+            mathcolor4 = random.choice(mathcolorchoices)
+            print(mathcolor1+" __  __ "+mathcolor2+"       "+mathcolor3+"_______ "+mathcolor4+"_    _ ")
+            print(mathcolor1+"|  \/  |"+mathcolor2+"   /\ "+mathcolor3+"|__   __|"+mathcolor4+" |  | |")
+            print(mathcolor1+"| \  / |"+mathcolor2+"  /  \ "+mathcolor3+"  | |  "+mathcolor4+"| |__| |")
+            print(mathcolor1+"| |\/| |"+mathcolor2+" / /\ \ "+mathcolor3+" | |  "+mathcolor4+"|  __  |")
+            print(mathcolor1+"| |  | |"+mathcolor2+"/ ____ \ "+mathcolor3+"| |  "+mathcolor4+"| |  | |")
+            print(mathcolor1+"|_|  |_/"+mathcolor2+"_/    \_\ "+mathcolor3+"_|  "+mathcolor4+"|_|  |_|")
+            print("\n\n")
     WholeThing2()
     def WholeThing1():
         print("temporary")
@@ -295,9 +334,4 @@ else:
     time.sleep(3)
 while startbool:
     WholeThing2()
-
-
-
-
-
 
